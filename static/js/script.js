@@ -6,10 +6,19 @@ document.getElementById('username-form').addEventListener('submit', function(e) 
   if (username) {
     const chatWindow = document.getElementById('chat-window');
 
+    const compliments = [
+      "Kamu keren banget!",
+      "Aku suka caramu tersenyum.",
+      "Semangat terus ya!",
+      "Kamu bikin hariku jadi cerah!",
+      "Keren banget style kamu!"
+    ];
+    const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+
     // Buat bubble chat user
     const userBubble = document.createElement('div');
     userBubble.classList.add('bubble', 'user');
-    userBubble.textContent = username;
+    userBubble.textContent = `${username}, ${randomCompliment}`;
     chatWindow.appendChild(userBubble);
 
     // Scroll ke bawah otomatis
