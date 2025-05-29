@@ -6,22 +6,29 @@ document.getElementById('username-form').addEventListener('submit', function(e) 
   if (username) {
     const chatWindow = document.getElementById('chat-window');
 
-    const compliments = [
-      "Kamu keren banget!",
-      "Aku suka caramu tersenyum.",
-      "Semangat terus ya!",
-      "Kamu bikin hariku jadi cerah!",
-      "Keren banget style kamu!"
-    ];
-    const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
-
     // Buat bubble chat user
     const userBubble = document.createElement('div');
     userBubble.classList.add('bubble', 'user');
-    userBubble.textContent = `${username}, ${randomCompliment}`;
+    userBubble.textContent = username;
     chatWindow.appendChild(userBubble);
 
-    // Scroll ke bawah otomatis
+    // Random compliment list
+    const compliments = [
+      "Kamu luar biasa! 🌟",
+      "Hari ini kamu hebat banget! 💪",
+      "Selalu ada yang spesial darimu! ✨",
+      "Semangat terus ya! 💖",
+      "Kamu bikin hari ini lebih cerah! 🌈"
+    ];
+    const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+
+    // Buat bubble chat Marjorie (random compliment)
+    const marjorieBubble = document.createElement('div');
+    marjorieBubble.classList.add('bubble', 'marjorie');
+    marjorieBubble.textContent = randomCompliment;
+    chatWindow.appendChild(marjorieBubble);
+
+    // Scroll otomatis ke bawah
     chatWindow.scrollTop = chatWindow.scrollHeight;
 
     // Clear input
@@ -29,7 +36,7 @@ document.getElementById('username-form').addEventListener('submit', function(e) 
   }
 });
 
-// Update jam secara real-time
+// Update jam real-time
 function updateTime() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
@@ -39,10 +46,11 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
+// Update battery level
 function updateBatteryLevel() {
   const batteryLevel = document.querySelector('.battery-level');
-  const level = Math.floor(Math.random() * 100) + 1; // Random antara 1-100%
+  const level = Math.floor(Math.random() * 50) + 50; // Acak antara 50% - 100%
   batteryLevel.style.width = `${level}%`;
 }
-setInterval(updateBatteryLevel, 5000); // Update setiap 5 detik
-updateBatteryLevel(); // Panggil pertama kali
+setInterval(updateBatteryLevel, 5000);
+updateBatteryLevel();
