@@ -1,32 +1,28 @@
-
-const compliments = [
-  "You're amazing!",
-  "Shine on, star!",
-  "You're a gem!",
-  "Smile brighter!",
-  "Keep rocking!"
-];
-
-document.getElementById("flip-toggle").addEventListener("click", () => {
-  document.getElementById("flip-container").querySelector(".flip-phone").classList.toggle("flipped");
-});
-
-document.getElementById("username-form").addEventListener("submit", e => {
+document.getElementById('username-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const username = document.getElementById("username").value.trim();
-  if (!username) return;
-  const message = `You've got this message, ${username}: ${compliments[Math.floor(Math.random() * compliments.length)]}`;
-  const msgElem = document.createElement("div");
-  msgElem.className = "chat-message";
-  msgElem.textContent = message;
-  document.getElementById("chat-window").appendChild(msgElem);
-  document.getElementById("username").value = '';
-});
+  const username = document.getElementById('username').value;
+  const chatWindow = document.getElementById('chat-window');
 
-function updateTime() {
-  const now = new Date();
-  const timeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-  document.getElementById("time-display").textContent = timeStr;
-}
-setInterval(updateTime, 1000);
-updateTime();
+  // User bubble
+  const userBubble = document.createElement('div');
+  userBubble.className = 'bubble user';
+  userBubble.innerHTML = `<strong>${username}:</strong> ${username}`;
+  chatWindow.appendChild(userBubble);
+
+  // Random compliment
+  const compliments = [
+    "Kamu luar biasa! 🌟",
+    "Jangan lupa betapa kerennya kamu! 💖",
+    "Selalu bersinar ya! ✨",
+    "Kamu hebat dan penuh semangat! 🌈"
+  ];
+  const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+
+  // Marjorie reply bubble
+  const marjorieBubble = document.createElement('div');
+  marjorieBubble.className = 'bubble marjorie';
+  marjorieBubble.innerHTML = `<strong>Marjorie:</strong> ${randomCompliment}`;
+  chatWindow.appendChild(marjorieBubble);
+
+  document.getElementById('username').value = '';
+});
