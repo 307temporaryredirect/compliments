@@ -6,13 +6,36 @@ document.getElementById('username-form').addEventListener('submit', function(e) 
   if (username) {
     const chatWindow = document.getElementById('chat-window');
 
-    // Buat bubble chat user
+    // Bubble chat user
     const userBubble = document.createElement('div');
     userBubble.classList.add('bubble', 'user');
     userBubble.textContent = username;
     chatWindow.appendChild(userBubble);
 
-    // Scroll ke bawah otomatis
+    // Array compliment random
+    const compliments = [
+      "Kamu keren banget hari ini!",
+      "Senyummu bikin hari cerah!",
+      "Aku suka cara kamu berpikir!",
+      "Kamu selalu membuatku terkesan.",
+      "Tetap jadi diri sendiri ya, kamu istimewa!"
+    ];
+
+    // Pilih compliment random
+    const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+
+    // Delay sedikit biar natural, lalu tampilkan compliment dari Marjorie
+    setTimeout(() => {
+      const complimentBubble = document.createElement('div');
+      complimentBubble.classList.add('bubble', 'marjorie');
+      complimentBubble.textContent = randomCompliment;
+      chatWindow.appendChild(complimentBubble);
+
+      // Scroll ke bawah otomatis
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 600);
+
+    // Scroll ke bawah otomatis setelah user input
     chatWindow.scrollTop = chatWindow.scrollHeight;
 
     // Clear input
