@@ -13,7 +13,9 @@
     <div class="top-bar">
       <div class="signal"></div>
       <div class="time" id="time-display"></div>
-      <div class="battery"></div>
+      <div class="battery">
+        <div class="battery-level" style="width: 70%;"></div>
+      </div>
     </div>
     <div class="chat-header">Marjorie</div>
     <div class="chat-window" id="chat-window">
@@ -25,10 +27,12 @@
       <input type="text" id="username" placeholder="Tulis namamu di sini..." required />
       <button type="submit">Kirim</button>
     </form>
+    <button id="save-screenshot" style="margin: 10px auto 0; display: block; padding: 8px 16px; border-radius: 20px; border:none; background:#6fb1fc; color:#fff; cursor:pointer;">Save Screenshot</button>
   </div>
-  <div class="home-button"></div> <!-- Lingkaran home button ala iPhone -->
+  <div class="home-button"></div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
