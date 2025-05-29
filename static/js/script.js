@@ -29,3 +29,11 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 updateTime();
+
+function updateBatteryLevel() {
+  const batteryLevel = document.querySelector('.battery-level');
+  const level = Math.floor(Math.random() * 100) + 1; // Random antara 1-100%
+  batteryLevel.style.width = `${level}%`;
+}
+setInterval(updateBatteryLevel, 5000); // Update setiap 5 detik
+updateBatteryLevel(); // Panggil pertama kali
