@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Y2K Cottagecore SMS Compliment</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
 
@@ -12,25 +12,25 @@
   <div class="phone-screen">
     <div class="top-bar">
       <div class="signal"></div>
+      <div class="time" id="time-display"></div>
       <div class="battery">
         <div class="battery-level"></div>
       </div>
-      <div class="time" id="time-display"></div>
     </div>
     <div class="chat-header">Marjorie</div>
     <div class="chat-window" id="chat-window">
       <div class="bubble marjorie">
-        Hey, aku mau kasih kamu compliment, langsung balas pesan ini pakai username kamu ya!
+        <strong>Marjorie:</strong> Hey, aku mau kasih kamu compliment, langsung balas pesan ini pakai username kamu ya!
       </div>
     </div>
     <form id="username-form" autocomplete="off">
       <input type="text" id="username" placeholder="Tulis namamu di sini..." required />
       <button type="submit">Kirim</button>
     </form>
-    <div class="home-button"></div>
   </div>
+  <div class="home-button"></div>
 </div>
 
-<script src="js/script.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
