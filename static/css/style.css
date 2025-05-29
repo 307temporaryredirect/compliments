@@ -1,19 +1,58 @@
-.chat-window {
-  flex: 1;
-  margin-top: 10px;
-  background: #e6f4ea;
-  border-radius: 10px;
-  padding: 10px;
-  overflow-y: auto;
+body {
+  background-color: #e0f7e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.phone-frame {
+  background-color: #a8d5ba;
+  border: 12px solid #6fb1fc;
+  border-radius: 30px;
+  width: 300px;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-screen {
+  background-color: #fff;
+  width: 260px;
+  height: 500px;
   display: flex;
   flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px #6fb1fc;
+}
+
+.chat-header {
+  background-color: #6fb1fc;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.chat-window {
+  flex: 1;
+  padding: 10px;
+  background-color: #e6f4ea;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .bubble {
   padding: 8px 12px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 15px;
   max-width: 80%;
+  word-wrap: break-word;
 }
 
 .marjorie {
@@ -24,4 +63,24 @@
 .user {
   background-color: #add8e6;
   align-self: flex-end;
+}
+
+form {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-top-left-radius: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #6fb1fc;
+  color: white;
+  border: none;
+  border-top-right-radius: 10px;
 }
