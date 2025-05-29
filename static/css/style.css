@@ -1,4 +1,3 @@
-/* Body tetap natural soft */
 body {
   background-color: #e0f7e9;
   display: flex;
@@ -6,181 +5,198 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Phone frame: netral abu-abu gelap */
 .phone-frame {
-  background-color: #1c1c1e;
-  border: 12px solid #2c2c2e;
-  border-radius: 38px;
+  background: linear-gradient(145deg, #a8d5ba, #6fb1fc);
+  border-radius: 40px;
   width: 320px;
-  height: 570px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 30px rgba(0,0,0,0.4);
-}
-
-/* Phone screen putih */
-.phone-screen {
-  background-color: #f0f0f5;
-  width: 280px;
-  height: 530px;
+  height: 580px;
+  box-shadow:
+    inset 0 0 15px #74b1eb,
+    0 10px 20px rgba(107, 176, 252, 0.6);
   display: flex;
   flex-direction: column;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: inset 0 0 10px #bbb;
-  padding-bottom: 80px; /* ruang untuk home button */
+  align-items: center;
+  padding: 15px 0 35px;
+  position: relative;
 }
 
-/* Top bar: abu terang */
-.top-bar {
-  height: 30px;
-  background-color: #d1d1d6;
-  color: #3a3a3c;
-  font-size: 14px;
+.phone-screen {
+  background-color: #f8fcf6;
+  width: 280px;
+  height: 520px;
+  border-radius: 25px;
+  box-shadow: inset 0 0 15px #a2d19d;
   display: flex;
-  align-items: center;
-  padding: 0 14px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.top-bar {
+  height: 32px;
+  background: transparent;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 14px;
+  color: #3b5e3b;
   font-weight: 600;
   user-select: none;
   position: relative;
 }
 
-/* Sinyal ikon */
 .signal {
-  font-size: 18px;
-}
-
-/* Battery */
-.battery {
-  position: relative;
-  width: 30px;
-  height: 14px;
-  border: 2px solid #3a3a3c;
+  width: 40px;
+  height: 16px;
+  background: linear-gradient(90deg, #6fb1fc, #a8d5ba);
   border-radius: 4px;
-  box-sizing: border-box;
-  background-color: white;
+  position: relative;
 }
 
-.battery-level {
-  background-color: #0a84ff; /* biru iMessage */
-  height: 100%;
-  width: 70%; /* contoh level baterai */
+.signal::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  background-color: #2f6b2f;
+  border-radius: 50%;
+  box-shadow:
+    8px 0 #2f6b2f,
+    16px 0 #2f6b2f;
+}
+
+.time {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.battery {
+  width: 45px;
+  height: 20px;
+  border: 2.5px solid #2f6b2f;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #cde5cd;
+}
+
+.battery::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 5px;
+  width: 6px;
+  height: 10px;
+  background-color: #2f6b2f;
   border-radius: 2px;
 }
 
-/* Time centered */
-.time {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.battery-level {
+  background-color: #4caf50;
+  height: 100%;
+  width: 70%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.chat-header {
+  background-color: #a8d5ba;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 700;
+  color: #2f6b2f;
+  font-size: 20px;
+  user-select: none;
+  box-shadow: inset 0 -4px 6px #75b875;
+}
+
+.chat-window {
+  flex: 1;
+  padding: 15px;
+  background-color: #e6f4ea;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble {
+  padding: 12px 16px;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.marjorie {
+  background-color: #c1e1c1;
+  align-self: flex-start;
+  color: #2f6b2f;
   font-weight: 600;
 }
 
-/* Header chat: putih, bold, sedikit shadow */
-.chat-header {
-  background-color: #f0f0f5;
-  color: #000;
-  text-align: center;
-  padding: 14px 0;
-  font-weight: 700;
-  user-select: none;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-}
-
-/* Chat window: putih bersih */
-.chat-window {
-  flex: 1;
-  padding: 12px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-/* Bubble Marjorie: iMessage light gray bubble */
-.bubble.marjorie {
-  background-color: #e5e5ea;
-  color: #000;
-  align-self: flex-start;
-  padding: 12px 16px;
-  margin: 5px 0;
-  border-radius: 20px 20px 20px 5px;
-  max-width: 75%;
-  font-size: 15px;
-  line-height: 1.3;
-  user-select: text;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
-/* Bubble user: iMessage blue bubble */
-.bubble.user {
-  background-color: #0a84ff;
-  color: white;
+.user {
+  background-color: #add8e6;
   align-self: flex-end;
-  padding: 12px 16px;
-  margin: 5px 0;
-  border-radius: 20px 20px 5px 20px;
-  max-width: 75%;
-  font-size: 15px;
-  line-height: 1.3;
-  user-select: text;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  color: #1f3d7a;
+  font-weight: 600;
 }
 
-/* Form input + button: putih bersih */
 form {
   display: flex;
-  border-top: 1px solid #ccc;
-  background-color: #f0f0f5;
-  padding: 10px;
+  border-top: 1px solid #a8d5ba;
+  padding: 10px 15px;
+  background-color: #d8eed8;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 input[type="text"] {
   flex: 1;
-  padding: 12px 15px;
-  border: 1.5px solid #ccc;
-  border-radius: 25px 0 0 25px;
-  font-size: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  font-size: 16px;
   outline: none;
-  transition: border-color 0.3s;
-}
-
-input[type="text"]:focus {
-  border-color: #0a84ff;
 }
 
 button {
-  padding: 12px 20px;
-  background-color: #0a84ff;
-  color: white;
+  background-color: #6fb1fc;
   border: none;
-  font-weight: 700;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 0 20px 20px 0;
   cursor: pointer;
-  border-radius: 0 25px 25px 0;
-  transition: background-color 0.3s;
+  transition: background-color 0.25s ease;
 }
 
 button:hover {
-  background-color: #0066cc;
+  background-color: #4a8de0;
 }
 
-/* Home button: lingkaran iPhone klasik */
 .home-button {
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle at center, #bebebe, #8b8b8b);
+  position: absolute;
+  bottom: 12px;
+  width: 60px;
+  height: 60px;
+  background: #a8d5ba;
   border-radius: 50%;
-  margin: 12px auto 15px auto;
-  box-shadow:
-    inset 0 3px 6px rgba(255,255,255,0.7),
-    0 2px 5px rgba(0,0,0,0.3);
-  cursor: default;
-  user-select: none;
+  box-shadow: inset 0 0 8px #75b875;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  border: 3px solid #6fb1fc;
+  transition: box-shadow 0.3s ease;
+}
+
+.home-button:hover {
+  box-shadow: 0 0 15px #6fb1fc;
 }
