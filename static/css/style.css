@@ -112,7 +112,7 @@ body {
 .chat-window {
   flex: 1;
   padding: 10px; /* Sedikit padding */
-  background-color: #e6f4ea;
+  background-color: #e8e2d4;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
