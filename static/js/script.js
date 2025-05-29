@@ -12,23 +12,7 @@ document.getElementById('username-form').addEventListener('submit', function(e) 
     userBubble.textContent = username;
     chatWindow.appendChild(userBubble);
 
-    // Random compliment list
-    const compliments = [
-      "Kamu luar biasa! 🌟",
-      "Hari ini kamu hebat banget! 💪",
-      "Selalu ada yang spesial darimu! ✨",
-      "Semangat terus ya! 💖",
-      "Kamu bikin hari ini lebih cerah! 🌈"
-    ];
-    const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
-
-    // Buat bubble chat Marjorie (random compliment)
-    const marjorieBubble = document.createElement('div');
-    marjorieBubble.classList.add('bubble', 'marjorie');
-    marjorieBubble.textContent = randomCompliment;
-    chatWindow.appendChild(marjorieBubble);
-
-    // Scroll otomatis ke bawah
+    // Scroll ke bawah otomatis
     chatWindow.scrollTop = chatWindow.scrollHeight;
 
     // Clear input
@@ -36,7 +20,7 @@ document.getElementById('username-form').addEventListener('submit', function(e) 
   }
 });
 
-// Update jam real-time
+// Update jam secara real-time
 function updateTime() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
@@ -45,12 +29,3 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 updateTime();
-
-// Update battery level
-function updateBatteryLevel() {
-  const batteryLevel = document.querySelector('.battery-level');
-  const level = Math.floor(Math.random() * 50) + 50; // Acak antara 50% - 100%
-  batteryLevel.style.width = `${level}%`;
-}
-setInterval(updateBatteryLevel, 5000);
-updateBatteryLevel();
