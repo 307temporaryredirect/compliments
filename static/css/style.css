@@ -99,20 +99,20 @@ body {
 }
 
 .chat-header {
-  background-color: #a8d5ba;
+  background-color: #ffffff;
   padding: 10px 0;
   text-align: center;
   font-weight: 700;
-  color: #2f6b2f;
+  color: #222222;
   font-size: 18px; /* Ukuran font header lebih kecil */
   user-select: none;
-  box-shadow: inset 0 -4px 6px #75b875;
+  box-shadow: inset 0 -4px 6px #222222;
 }
 
 .chat-window {
   flex: 1;
   padding: 10px; /* Sedikit padding */
-  background-color: #f3ebd8;
+  background-color: #ffffff;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -196,17 +196,6 @@ button:hover {
   cursor: pointer;
   border: 2px solid #333; /* Tambah garis tipis */
   transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.home-button::after {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  width: 20px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.4); /* Highlight bulat */
-  border-radius: 50%;
 }
 
 .home-button:hover {
