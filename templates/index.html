@@ -3,26 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Y2K Cottagecore SMS Compliment</title>
+  <title>Y2K Flip Phone Chat - Marjorie</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
 
-<div class="phone-container">
+<div class="phone-frame">
   <div class="phone-screen">
-    <div class="top-bar">
-      <div class="signal"></div>
-      <div class="battery"></div>
-      <div class="time" id="time-display"></div>
-    </div>
+    <div class="chat-header">Marjorie</div>
     <div class="chat-window" id="chat-window">
-      <!-- Bubble chat Marjorie (pesan pembuka) -->
       <div class="bubble marjorie">
-        <strong>Marjorie:</strong> Hey, aku mau kasih kamu compliment, langsung balas pesan ini pakai username kamu ya!
+        Hey, aku mau kasih kamu compliment, langsung balas pesan ini pakai username kamu ya!
       </div>
     </div>
     <form id="username-form" autocomplete="off">
-      <input type="text" id="username" placeholder="Tulis namamu di sini..." required />
+      <input type="text" id="username" placeholder="Tulis pesan di sini..." required />
       <button type="submit">Kirim</button>
     </form>
   </div>
