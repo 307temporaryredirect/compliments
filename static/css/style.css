@@ -9,7 +9,7 @@ body {
 }
 
 .phone-frame {
-  background: linear-gradient(145deg, #596b1b, #aabe5d);
+  background: linear-gradient(145deg, #b6bb79, #f3ebd8);
   border-radius: 40px;
   width: 320px;
   height: 565px;
@@ -22,7 +22,7 @@ body {
 }
 
 .phone-screen {
-  background-color: #e0edf7;
+  background-color: #fdf6eb;
   width: 280px;
   height: 520px;
   border-radius: 25px;
