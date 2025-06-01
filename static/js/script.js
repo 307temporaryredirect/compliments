@@ -37,10 +37,14 @@ document.getElementById('username-form').addEventListener('submit', function(e) 
     ];
 
     // Pilih compliment random
-let randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+    let randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
 
-// Ganti semua {username} di dalam kalimat dengan nama user yang diinput
-randomCompliment = randomCompliment.replace(/\{username\}/g, username);
+    console.log('Sebelum replace:', randomCompliment);
+
+    // Ganti semua {username} di dalam kalimat dengan nama user yang diinput
+    randomCompliment = randomCompliment.replace(/\{username\}/g, username);
+
+    console.log('Sesudah replace:', randomCompliment);
 
     // Delay sedikit biar natural, lalu tampilkan compliment dari Marjorie
     setTimeout(() => {
